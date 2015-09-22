@@ -29,6 +29,9 @@ gem 'simple_form', '~> 3.1.1'
 # Twitter's Bootstrap, converted to Sass and ready to drop into Rails or Compass
 gem 'bootstrap-sass', '~> 3.3.5.1'
 
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 3.5.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

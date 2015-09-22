@@ -17,9 +17,16 @@
   <%= @movie.rating %>
 </p>
 
+<% if user_signed_in? && (@movie.user == current_user) %>
+  <div>
+    <%= link_to "Edit", edit_movie_path(@movie), class: 'btn btn-primary' %>
+    <%= link_to "Delete", @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  </div>
+<% end %>
+
+<br>
 <div>
-  <%= link_to "Edit", edit_movie_path(@movie), class: 'btn btn-primary' %>
-  <%= link_to "Delete", @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn btn-warning' %>
 </div>
 <br>
 <div>
