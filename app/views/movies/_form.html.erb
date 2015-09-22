@@ -1,0 +1,32 @@
+<%= simple_form_for @movie do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="errors">
+      <p>
+        <%= pluralize(@movie.errors.count, "error") %> prevented this movie from saving
+      </p>
+      <ul>
+        <% @movie.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :director, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :movie_length, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :rating, input_html: { class: 'form-control' } %>
+  </div>
+
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

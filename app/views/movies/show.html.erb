@@ -1,11 +1,28 @@
 <h1><%= @movie.title %></h1>
-<p>Description: <%= @movie.description %></p>
-<p>Director: <%= @movie.director %></p>
-<p>Movie length (mins): <%= @movie.movie_length %></p>
-<p>Rating: <%= @movie.rating %></p>
 
-<%= link_to "Edit", edit_movie_path(@movie) %>
-<%= link_to "Delete", @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
 <p>
-  <%= link_to "Back", root_path %>
+  <strong>Description:</strong>
+  <%= @movie.description %>
 </p>
+<p>
+  <strong>Director: </strong>
+  <%= @movie.director %>
+</p>
+<p>
+  <strong>Movie length (mins):</strong>
+  <%= @movie.movie_length %>
+</p>
+<p>
+  <strong>Rating: </strong>
+  <%= @movie.rating %>
+</p>
+
+<div>
+  <%= link_to "Edit", edit_movie_path(@movie), class: 'btn btn-primary' %>
+  <%= link_to "Delete", @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+</div>
+<br>
+<div>
+  <%= link_to "Back", movies_path, class: 'btn btn-default' %>
+</div>
+

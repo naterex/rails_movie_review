@@ -1,26 +1,8 @@
 <h1>New Movie</h1>
 
-<%= simple_form_for @movie do |f| %>
-  <% if @movie.errors.any? %>
-    <div id="errors">
-      <p>
-        <%= pluralize(@movie.errors.count, "error") %> prevented this movie from saving
-      </p>
-      <ul>
-        <% @movie.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render 'form' %>
 
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :director %>
-  <%= f.input :movie_length %>
-  <%= f.input :rating %>
-
-  <%= f.button :submit %>
-<% end %>
-
-<%= link_to "Back", root_path %>
+<br>
+<div class="row">
+  <%= link_to "Back", movies_path, class: 'btn btn-default' %>
+</div>

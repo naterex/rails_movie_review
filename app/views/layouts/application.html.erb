@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<%= yield %>
+  <%= render partial: "layouts/flash", flash: flash %>
+
+  <%= yield %>
 
 </body>
 </html>

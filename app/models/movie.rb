@@ -1,3 +1,3 @@
 class Movie < ActiveRecord::Base
-  validates :title, :description, :movie_length, :rating, presence: true
+  validates :title, :description, :director, :movie_length, :rating, presence: true
 end
