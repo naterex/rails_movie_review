@@ -1,0 +1,11 @@
+<h1><%= @movie.title %></h1>
+<p>Description: <%= @movie.description %></p>
+<p>Director: <%= @movie.director %></p>
+<p>Movie length (mins): <%= @movie.movie_length %></p>
+<p>Rating: <%= @movie.rating %></p>
+
+<%= link_to "Edit", edit_movie_path(@movie) %>
+<%= link_to "Delete", @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p>
+  <%= link_to "Back", root_path %>
+</p>

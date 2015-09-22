@@ -1,1 +1,6 @@
-<h1>Index page</h1>
+<% @movies.each do |movie| %>
+  <h1><%= link_to movie.title, movie %></h1>
+  <div>
+    <%= truncate(movie.description, length: 45) %>
+  </div>
+<% end %>

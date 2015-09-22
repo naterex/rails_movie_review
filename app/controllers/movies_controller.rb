@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
   before_action :find_movie, only: [:show, :edit, :update, :destroy]
 
   def index
+    @movies = Movie.all.order('created_at DESC')
   end
 
   def new
@@ -10,6 +11,11 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(params_movie)
+    if @movie.save
+      redirect_to @movie, notice: "Movie was successfully created"
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -19,9 +25,17 @@ class MoviesController < ApplicationController
   end
 
   def update
+    @movie = Movie.update(params_movie)
+    if @movie.save
+      redirect_to @movie, notice: "Movie was successfully updated"
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @movie.destroy
+    redirect_to root_path, notice: "Movie was successfully deleted"
   end
 
   private
